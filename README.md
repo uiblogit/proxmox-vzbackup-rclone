@@ -25,7 +25,7 @@ git clone https://github.com/TheRealAlexV/proxmox-vzbackup-rclone.git
 chmod +x /root/proxmox-vzbackup-rclone/vzbackup-rclone.sh
 ```
 
-3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE` at the top of the file. Change `gd-backup_crypt` in the file to the name you gave your remote link when you set up rclone.
+3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE` and change the writing `CHANGEME` with the name of your rclone remote link; at the top of the file.
 
 4. Open /etc/vzdump.conf, uncomment the `script:` line and set that to `/root/proxmox-vzbackup-rclone/vzbackup-rclone.sh`:
 ```
