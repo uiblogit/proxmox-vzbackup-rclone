@@ -4,7 +4,7 @@
 ############ /START CONFIG
 dumpdir="/mnt/pve/pvebackups01/dump" # Set this to where your vzdump files are stored
 MAX_AGE=3 # This is the age in days to keep local backup copies. Local backups older than this are deleted.
-gd-backup_crypt="CHANGEME" # Put here your rclone remote name.
+#replace gd-backup_crypt on the script with your rclone remote name.
 ############ /END CONFIG
 
 _bdir="$dumpdir"
