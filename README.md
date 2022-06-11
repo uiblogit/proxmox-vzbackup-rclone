@@ -21,11 +21,11 @@ When setting up the encryption, I DO NOT reccomend you encrypt the filenames and
 ```
 apt-get install git
 cd /root
-git clone https://github.com/TheRealAlexV/proxmox-vzbackup-rclone.git
+git clone https://github.com/uiblogit/proxmox-vzbackup-rclone.git
 chmod +x /root/proxmox-vzbackup-rclone/vzbackup-rclone.sh
 ```
 
-3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE` and change the writing `CHANGEME` with the name of your rclone remote link; at the top of the file.
+3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE` and change the writing `CHANGEME` with the name of your rclone remote link; at the top of the file; replace `gd-backup_crypt` on the script with your rclone remote name.
 
 4. Open /etc/vzdump.conf, uncomment the `script:` line and set that to `/root/proxmox-vzbackup-rclone/vzbackup-rclone.sh`:
 ```
