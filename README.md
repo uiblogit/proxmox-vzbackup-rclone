@@ -21,18 +21,19 @@ When setting up the encryption, I DO NOT reccomend you encrypt the filenames and
 ```
 apt-get install git
 cd /root
-git clone https://github.com/TheRealAlexV/proxmox-vzbackup-rclone.git
+git clone https://github.com/uiblogit/proxmox-vzbackup-rclone.git
 chmod +x /root/proxmox-vzbackup-rclone/vzbackup-rclone.sh
 ```
 
-3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE` and change the writing `CHANGEME` with the name of your rclone remote link; at the top of the file.
+3. Edit vzbackup-rclone.sh and set both `$dumpdir` and `$MAX_AGE`at the top of the file.
+4. Always in the same file, replace the `gd-backup_crypt` written in the whole script with the name you assigned to the rclone remote to connect to gdrive.
 
-4. Open /etc/vzdump.conf, uncomment the `script:` line and set that to `/root/proxmox-vzbackup-rclone/vzbackup-rclone.sh`:
+5. Open /etc/vzdump.conf, uncomment the `script:` line and set that to `/root/proxmox-vzbackup-rclone/vzbackup-rclone.sh`:
 ```
 script:/root/proxmox-vzbackup-rclone/vzbackup-rclone.sh
 ```
 
-5. You're finished. Kicking off a manual or scheduled backup will automatically trigger the rclone backup. To verify this, you can kickoff a manual backup and watch the proxmox console log output.
+6. You're finished. Kicking off a manual or scheduled backup will automatically trigger the rclone backup. To verify this, you can kickoff a manual backup and watch the proxmox console log output.
 
 ### Example webui console output from a successful vzbackup run:
 
